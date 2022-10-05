@@ -54,6 +54,18 @@ function onInput(e) {
 
 function onSubmit(e) {
   e.preventDefault();
+  const elements = e.currentTarget.elements;
+
+  let formDataObj = {};
+
+  for (const element of elements) {
+    if (element.nodeName === 'BUTTON') {
+      continue;
+    }
+    formDataObj[element.name] = element.value;
+  }
+  console.log(formDataObj);
+
   e.target.reset();
   removeFormDataInLocalStorage(STORAGE_FORM_DATA_KEY);
 }
