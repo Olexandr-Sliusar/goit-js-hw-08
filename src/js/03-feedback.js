@@ -67,5 +67,6 @@ function onSubmit(e) {
   console.log(formDataObj);
 
   e.target.reset();
+  DataInLocalStorage = {};
   removeFormDataInLocalStorage(STORAGE_FORM_DATA_KEY);
 }
